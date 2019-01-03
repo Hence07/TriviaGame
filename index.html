@@ -1,80 +1,82 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script src="assets/javascript/app.js"></script>
-    
+    <meta charset="UTF-8">
+    <title>Trivia Game</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </head>
 
-
 <body background="assets/images/wr.jpeg">
-    <h1>Totally Trivial Trivia!</h1>
-    <button id="start_button">Start Game</button>
-    <h3>Time Remaining: </h3>
-    <h3>What was the first full length CGI movies? </h3>
-    <fieldset>
-        <div class="some-class">
-            <input type="radio" class="radio" name="x" value="y" id="y" />
-            <label for="y">Thing 1</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 2</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 3</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 4</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-    
+    <div class="jumbotron" id="twd-jumbo">
+<h1 id="heading">Totally Trivial Trivia!</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1">
         </div>
-    </fieldset>
-    <h3>Which of this is not the name of Spices Girls?</h3>
-    <fieldset>
-        <div class="some-class">
-            <input type="radio" class="radio" name="x" value="y" id="y" />
-            <label for="y">Thing 1</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 2</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 3</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 4</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-    
+
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="well">
+                                <h4 id="time-left">
+                                    Time remaining: 10 seconds
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="content">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="quiz">
+                        <form>
+                            <div class="form-group">
+                                <div class="radio">
+                                    <h6 class="questionX"></h6>
+                                    <div id="responses">
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                            <div id="submit-div"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </fieldset>
-    <h3>Which NBA team won the most titles in the 90s ?</h3>
-    <fieldset>
-        <div class="some-class">
-            <input type="radio" class="radio" name="x" value="y" id="y" />
-            <label for="y">Thing 1</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 2</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 3</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 4</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-    
+
+        <div class="col-md-1">
         </div>
-    </fieldset>
-    <h3>Which group released the hit song: "Smell like Teens Spirits?"</h3>
-    <fieldset>
-        <div class="some-class">
-            <input type="radio" class="radio" name="x" value="y" id="y" />
-            <label for="y">Thing 1</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 2</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 3</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-            <label for="z">Thing 4</label>
-            <input type="radio" class="radio" name="x" value="z" id="z" />
-    
+    </div>
+
+    <footer class="footer">
+        <div class="container" id="footer-text">
+            <p class="text-muted">Copyright &reg; 2019 Prudence Codjia</p>
         </div>
-    </fieldset>
+    </footer>
 </body>
+
 </html>
