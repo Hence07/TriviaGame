@@ -1,29 +1,29 @@
-var userPick;
+//var userPick;
 
-var correctAnswer = 0;
+//var correctAnswer = 0;
 
-var incorrectAnswer = 0;
+//var incorrectAnswer = 0;
 
-var unAnswer = 0;
+//var unAnswer = 0;
 
-var question = 0;
+//var question = 0;
 
-var images;
+//var images;
 
-var count=30;
+//var count=30;
 
 
 
 
 
 $(document).ready(function() {
-//Creating variable to track the question & "slide" numbers
+//variable to track  question 
 var questionCounter = 0;
 
 // timeout
 var ansTimeout = 2000;
 
-//Creating score variables
+// score 
 var correct = 0;
 var incorrect = 0;
 var missed = 0;
@@ -34,33 +34,33 @@ var userAns = [];
 //Creating an array of objects with the questions, answer options, and correct answer
 var questions = [
 {
-	question: "What is the name of Rick's son?",
-	choices: ["Carl", "Charles", "Daryl", "Glenn", "Shane"],
+        question: "Which of these is NOT a Whitney Houston song?",
+        choices: ["Time After Time", "Greatest Love of All", "I Will Always Love You"],
 	choicesAnswer: 0
 },
 {
-	question: "What does the CDC scientist tell Rick at the end of season 1?",
-	choices: ["It's in the water", "It's in all of us", "It can't be stopped", "Drink more wine", "It's in the air"],
+    question: "Which mathematical symbol is not the name of an Ed Sheeran album?",
+    choices: ["Plus", "Subtract", "Multiply", "Divide"],
 	choicesAnswer: 1
 },
 {
-	question: "Where do Carol and Beth reconnect in season 5?",
-	choices: ["Piedmont Hospital", "Emory University Hospital", "Sweet Auburn Market", "Grady Memorial Hospital", "The CDC"],
+    question: "What is the song that launched Justin Bieber to superstardom?",
+    choices: ["What Do You Mean ?", "Love Yourself", "Sorry", "Baby" ],
 	choicesAnswer: 3
 },
 {
-	question: "What do Rick and his group call the zombies?",
-	choices: ["Dead Ones", "Walkers", "Roamers", "Biters", "Rotters"],
+    question: "Which Taylor Swift album is Shake It Off on?",
+    choices: ["Speak Now", "1989", "Taylor Swift", "Red"],
 	choicesAnswer: 1
 },
 {
-	question: "What is T-Dogs real name?",
-	choices: ["Thomas Doge", "Theodore Doge", "Timothy Douglas", "Theodore Douglas", "Thomas Douglas"],
+    question: "Which Beatle performed a James Bond theme song?",
+    choices: ["John Lennon", "George Harrison", "Ringo Starr", "Paul McCartney"],
 	choicesAnswer: 3
 },
 {
-	question: "Where is Rick originally from?",
-	choices: ["King County, Georgia", "Woodbury, Georgia", "Atlanta, Georgia", "Kent Count, Georgia", "Walker County, Georgia"],
+    question: "Who sings Call Me Maybe?",
+    choices: ["Carly Rae", "Taylor Swift", "JepsenLana Del", "Rey Rihanna"],
 	choicesAnswer: 0
 }];
 
@@ -79,7 +79,7 @@ function submitAns() {
 };
 
 //Creating question timer variables & functions
-var timeLeft = 8;
+var timeLeft = 10;
 var increment;
 
 function runTimer() {
@@ -101,7 +101,7 @@ function decrement() {
 };
 
 function resetTimer() {
-	timeLeft = 8;
+	timeLeft = 10;
 	$("#time-left").html("Time remaining: " + timeLeft + " seconds");
 };
 
