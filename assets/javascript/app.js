@@ -1,238 +1,44 @@
-//var userPick;
+var options = [
 
-//var correctAnswer = 0;
+	{
+		question: "What popular soda beverage was originally developed as a mixer for whiskey?",
+		choice: ["Mountain Dew", "Sprite", "7-UP", "Coke"],
+		answer: 0,
+	},
+	{
+		question: "Pupusas, handmade thick stuffed corn tortillas, are a traditional dish from what country?",
+		choice: ["Ethiopia", "El Salvadore", "Peru", "Guatamala"],
+		answer: 1,
+	},
+	{
+		question: "Kopi luwak is a very expensive type of what?",
+		choice: ["Spice", "Caviar", "Coffee", "Rice variety"],
+		answer: 2,
+		
+	},
+	{
+		question: "Which is not an ingredient in a Harvey Wallbanger cocktail?",
+		choice: ["Orange Juice", "Vodka", "Sour Mix", "Galliano"],
+		answer: 2,
+	},
+	{
+		question: "How many items are there in a Bakers' Dozen?",
+		choice: ["12", "6", "24", "13"],
+		answer: 3,
+	},
+	{
+		question: "What is the most widely eaten fish in the world?",
+		choice: ["Tilapia", "Herring", "Sardine", "Tuna"],
+		answer: 1,
+	},
+	{
+		question: "Which fruit does not ripen once it has been picked?",
+		choice: ["Banana", "Lemon", "Mango", "Apple"],
+		answer: 1,
+	},
+	{
+		question: "Which fruit contains the most protein per 100 calories?",
+		choice: ["Guava", "Avocado", "Banana", "Blackberries"],
+		answer: 0,
+	}];
 
-//var incorrectAnswer = 0;
-
-//var unAnswer = 0;
-
-//var question = 0;
-
-//var images;
-
-//var count=30;
-
-
-
-
-
-$(document).ready(function() {
-//variable to track  question 
-var questionCounter = 0;
-
-// timeout
-var ansTimeout = 2000;
-
-// score 
-var correct = 0;
-var incorrect = 0;
-var missed = 0;
-
-//Creating array of user's answers
-var userAns = [];
-
-//Creating an array of objects with the questions, answer options, and correct answer
-var questions = [
-{
-        question: "Which of these is NOT a Whitney Houston song?",
-        choices: ["Time After Time", "Greatest Love of All", "I Will Always Love You"],
-	choicesAnswer: 0
-},
-{
-    question: "Which mathematical symbol is not the name of an Ed Sheeran album?",
-    choices: ["Plus", "Subtract", "Multiply", "Divide"],
-	choicesAnswer: 1
-},
-{
-    question: "What is the song that launched Justin Bieber to superstardom?",
-    choices: ["What Do You Mean ?", "Love Yourself", "Sorry", "Baby" ],
-	choicesAnswer: 3
-},
-{
-    question: "Which Taylor Swift album is Shake It Off on?",
-    choices: ["Speak Now", "1989", "Taylor Swift", "Red"],
-	choicesAnswer: 1
-},
-{
-    question: "Which Beatle performed a James Bond theme song?",
-    choices: ["John Lennon", "George Harrison", "Ringo Starr", "Paul McCartney"],
-	choicesAnswer: 3
-},
-{
-    question: "Who sings Call Me Maybe?",
-    choices: ["Carly Rae", "Taylor Swift", "JepsenLana Del", "Rey Rihanna"],
-	choicesAnswer: 0
-}];
-
-//Function to submit answers
-function submitAns() {
-	$("#submit").on("click", function(e) {
-		e.preventDefault();
-		userAns.length = 0;
-
-		//Record user answer to question
-		var userSelection = $("#responses input:radio[name=optionsRadios]:checked").val();
-		userAns.push(userSelection);
-		console.log(userAns);
-		nextQ();
-	});
-};
-
-//Creating question timer variables & functions
-var timeLeft = 10;
-var increment;
-
-function runTimer() {
-	increment = setInterval(decrement, 1000);
-};
-
-function decrement() {
-	timeLeft--;
-	$("#time-left").html("Time remaining: " + timeLeft + " seconds");
-	if (timeLeft === 0) {
-		stopTimer();
-		userAns.length = 0;
-		//Record user answer to question
-		var userSelection = $("#responses input:radio[name=optionsRadios]:checked").val();
-		userAns.push(userSelection);
-		console.log(userAns);
-		nextQ();
-	};
-};
-
-function resetTimer() {
-	timeLeft = 10;
-	$("#time-left").html("Time remaining: " + timeLeft + " seconds");
-};
-
-function displayTimer() {
-	$("#time-left").html("Answer Review");
-};
-
-function stopTimer() {
-	clearInterval(increment);
-};
-
-//Function to display the given response options
-function createRadios() {
-	var responseOptions = $("#responses");
-	//Empty array for user answer
-	responseOptions.empty();
-
-	for (var i = 0; i < questions[questionCounter].choices.length; i++) {
-		responseOptions.append('<label><input type="radio" name="optionsRadios" id="optionsRadios2" value="' + [i] +'"><div class="twd-opt">' + questions[questionCounter].choices[i] + '</div></input><br></label>');
-	};
-};
-
-//Function to display the given question
-function displayQ() {
-	clearQ();
-	resetTimer();
-	$(".questionX").html(questions[questionCounter].question);
-	//Calling the function to display the response options
-	createRadios();
-	//Creating submit button
-	$("#submit-div").append('<button type="submit" class="btn btn-default" id="submit">' + "Submit" + '</button>');
-	runTimer()
-	submitAns();
-};
-
-//Display start page
-function displayStart() {
-	$("#content").append('<a href="#" class="btn btn-primary btn-lg" id="start-button">' + "Start" + '</a>');
-	//Start game
-	$("#start-button").on("click", function(event) {
-		event.preventDefault();
-		//Displays the first question
-		firstQ();
-		resetTimer();
-	});
-};
-
-//Reset for end of game
-function reset() {
-	questionCounter = 0;
-	correct = 0;
-	incorrect = 0;
-	missed = 0;
-	userAns = [];
-	resetTimer();
-};
-
-//Display end page
-function displayEnd() {
-	clearQ();
-	$("#content").append('<h3>' + "Correct answers: " + correct + '</h3><br><h3>' + "Incorrect answers: " + incorrect + '</h3><br><h3>' + "Skipped questions: " + missed + '</h3><br><br><a href="#" class="btn btn-primary btn-lg" id="restart-button">' + "Restart Game" + '</a>');
-	//Restart game
-	$("#restart-button").on("click", function(event) {
-		event.preventDefault();
-		//Displays the first question
-		reset();
-		clearQ();
-		displayStart();
-	});
-};
-
-//Function to clear the question
-function clearQ() {
-	var questionDiv = $(".questionX");
-	questionDiv.empty();
-
-	var responsesDiv = $("#responses");
-	responsesDiv.empty();
-
-	var submitDiv = $("#submit-div");
-	submitDiv.empty();
-
-	var contentDiv = $("#content");
-	contentDiv.empty();
-
-	stopTimer();
-};
-
-//Showing whether answer was right/wrong
-function checkQ() {
-	clearQ();
-	var correctAnswer = questions[questionCounter].choicesAnswer;
-	if (userAns[0] == questions[questionCounter].choicesAnswer) {
-		$("#content").append('<h3>'+"Congratulations! You chose the right answer!" + '</h3>');
-		correct++;
-		displayTimer();
-	}
-	else if (userAns[0] === undefined) {
-		$("#content").append('<h3>'+"Time's up!" + '</h3><br><br><h3>' + "The correct answer was: " + questions[questionCounter].choices[correctAnswer] + '</h3>');
-		missed++;
-		displayTimer();
-	}
-	else {
-		$("#content").append('<h3>'+"You chose the wrong answer." + '</h3><br><br><h3>' + "The correct answer was: " + questions[questionCounter].choices[correctAnswer] + '</h3>');
-		incorrect++;
-		displayTimer();
-	};
-};
-
-//Function to change the question
-function nextQ() {
-	checkQ();
-	//Incrementing the count by 1
-	questionCounter++;
-	//If the count is the same as the length of the question array, the counts reset to 0
-	if (questionCounter === questions.length) {
-		setTimeout(displayEnd, ansTimeout);
-	}
-	else {
-		setTimeout(displayQ, ansTimeout);
-	};
-};
-
-//Function to call the first question
-function firstQ() {
-	var startContent = $("#content");
-	startContent.empty();
-	displayQ();
-};
-
-//Displays the start page
-displayStart();
-
-});

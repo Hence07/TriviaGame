@@ -2,81 +2,83 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
     <title>Trivia Game</title>
-    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://bootswatch.com/cyborg/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script type="text/javascript" src="assets/javascript/app.js"></script>
+
+    <!-- Materialize Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <!-- Custom CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+    <!-- Google Fonts Pacifico -->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <!-- Google Fonts Tillana -->
+    <link href="https://fonts.googleapis.com/css?family=Tillana" rel="stylesheet">
+
+
 </head>
+<body>
 
-<body background="assets/images/wr.jpeg">
-    <div class="jumbotron" id="twd-jumbo">
-<h1 id="heading">Totally Trivial Trivia!</h1>
-    </div>
-
-    <div class="row">
-        <div class="col-md-1">
-        </div>
-
-        <div class="col-md-10">
-            <div class="row">
-                <div class="col-md-4">
-                </div>
-
-                <div class="col-md-4 text-center">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="well">
-                                <h4 id="time-left">
-                                    Time remaining: 10 seconds
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="content">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
+    <div><br><br><br><br> </div>
+    <div class="container">
+   
+        <div id="welcome" class=row>
+            <div class="col s12">
+                <div class="header">
+                    <h1 class="left-align">Welcome</h1>  
+                    <h1 class="right-align">Let's have some fun here!</h1>
                 </div>
             </div>
-            <br>
+        
             <div class="row">
-                <div class="col-md-12">
-                    <div id="quiz">
-                        <form>
-                            <div class="form-group">
-                                <div class="radio">
-                                    <h6 class="questionX"></h6>
-                                    <div id="responses">
-                                    </div>
-                                </div>
-                            </div>
-                            <br><br>
-                            <div id="submit-div"></div>
-                        </form>
-                    </div>
+                <div class="col s12">
+                    <a id="beginBtn" class="btn waves-effect waves-yellow btn-large deep-orange lighten-2">Start</a>
                 </div>
             </div>
         </div>
-
-        <div class="col-md-1">
+       
+        <div id="game">
+            <div class="row">
+                <div class="col s8 offset-s2">
+                    <div id="timer"></div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col s12">      
+                    <div id="qNa">     
+                </div>
+            </div>                
+            <div class="row">
+                <div class="col s8 offset-s2">
+                    <a id="submitBtn" class="btn waves-effect waves-yellow btn-large deep-orange lighten-2">SUBMIT ANSWER</a>
+                </div>
+            </div>
+        
         </div>
+      
+        <div id="results">
+            <div class="row">
+                <div class="col s12">
+                    <h1>Results</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <h2 id="correct">"answered correctly: "</h2>
+                </div>
+                <div class="col s6">
+                    <h2 id="incorrect">"answered incorrectly: "</h2>
+                </div>
+            </div>
+        </div>
+        
     </div>
 
-    <footer class="footer">
-        <div class="container" id="footer-text">
-            <p class="text-muted">Copyright &reg; 2019 Prudence Codjia</p>
-        </div>
-    </footer>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Materialize Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <!-- JavaScript file link  -->
+    <script src="./assets/javascript/app.js"></script>
+
 </body>
-
 </html>
