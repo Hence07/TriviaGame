@@ -2,7 +2,52 @@
     border: solid;
 }*/
 /*footer*/
-body{
-    background-image: url(../images/triv.jpg);
-}
-    
+
+    body {
+        background-color: black;
+        background-image: url(../images/triv.jpg);
+        font-family: 'fantasy', cursive;
+    }
+
+    .container {
+        padding: 20px;
+        background-color: #01abba;
+        /*color: #FEDC3D;*/
+        color: darkgoldenrod
+        border-radius: 5px;
+        border: 15px double #01CBBA;
+    }
+
+    h1 {
+        font-family: 'fantasy', cursive !important;
+        text-shadow: -3px 0 #f8fae4;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: xx-large;
+        /*color: #f8fae4;*/
+        color: olive
+        font-family: 'Tillana', cursive;
+        font-weight: bolder;
+    }
+
+    #timer {
+        margin: 10px;
+        padding: 10px;
+        background-color: #ff8a65;
+        border: 8px double #ff7043;
+        font-size: xx-large;
+        font-weight: bolder;
+        text-align: center;
+        color: #f8fae4;
+    }
+
+    #qNa {
+        background-color: #FEDC3D;
+        border-radius: 5px;
+        border: 10px double #f8fae4;
+        color: black;
+        margin: 10px;
+        padding: 50px;
+    }
